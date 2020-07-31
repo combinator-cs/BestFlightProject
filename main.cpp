@@ -132,7 +132,7 @@ int findFlights(int gArr[],int no,int tm);    //no indicates no. of total nodes
 //----------------------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------------------
 
-                                                        // GRAPH
+                                                        // GRAPH - some part of code was taken from online sources like GeeksForGeeks and others then were edited accordingly
 
 class Graph
 {
@@ -342,9 +342,9 @@ void updateFlightData(int fltNo, int seat)
 {
 
     FILE* flights;
-    flights = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/planeData.txt","r");
+    flights = fopen("planeData.txt","r");
     FILE* tempF;
-    tempF = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/tempPlaneData.txt","w");
+    tempF = fopen("tempPlaneData.txt","w");
 
     int planeNo;
     int src;
@@ -376,8 +376,8 @@ void updateFlightData(int fltNo, int seat)
     fclose(tempF);
     fclose(flights);
 
-    remove("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/planeData.txt");
-    rename("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/tempPlaneData.txt","E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/planeData.txt");
+    remove("planeData.txt");
+    rename("tempPlaneData.txt","planeData.txt");
 
 }
 
@@ -386,9 +386,9 @@ void updateFlightData(int fltNo)
 {
 
     FILE* flights;
-    flights = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/planeData.txt","r");
+    flights = fopen("planeData.txt","r");
     FILE* tempF;
-    tempF = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/tempPlaneData.txt","w");
+    tempF = fopen("tempPlaneData.txt","w");
 
     int planeNo;
     int src;
@@ -420,8 +420,8 @@ void updateFlightData(int fltNo)
     fclose(tempF);
     fclose(flights);
 
-    remove("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/planeData.txt");
-    rename("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/tempPlaneData.txt","E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/planeData.txt");
+    remove("planeData.txt");
+    rename("tempPlaneData.txt","planeData.txt");
 
 }
 
@@ -752,7 +752,7 @@ mobInp:
 void getPassDetails(FILE* passengers)
 {
 
-    passengers = fopen("E:\\Projects and lab\\JIIT sem-3\\DS project\\Practice\\Prac1\\passengersData.txt","r");
+    passengers = fopen("passengersData.txt","r");
     char name[20];
     int age;
     int src;
@@ -776,9 +776,9 @@ void cancelTicket(FILE* passengers)
 {
     SetColor(6);
 
-    passengers = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/passengersData.txt","r");
+    passengers = fopen("passengersData.txt","r");
     FILE *temp;
-    temp = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/temp.txt","w");
+    temp = fopen("temp.txt","w");
 
 ftnoTag:
     cout<<"Enter Flight No. where you want to cancel: ";
@@ -843,8 +843,8 @@ stnoTag:
     fclose(temp);
     fclose(passengers);
 
-    remove("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/passengersData.txt");
-    rename("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/temp.txt","E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/passengersData.txt");
+    remove("passengersData.txt");
+    rename("temp.txt","passengersData.txt");
 
 
 }
@@ -976,7 +976,7 @@ nHopInp:
         }
     }
 
-    planes = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/planeData.txt","a");
+    planes = fopen("planeData.txt","a");
     fprintf(planes," %d %d %d %d %d",planeNo,src,dest,time,seatCount);
     for(int i = 0; i<nHop; i++)
         fprintf(planes," %d",hop[i]);
@@ -1002,7 +1002,7 @@ void readPlaneData(FILE* planes)
     char ch;
     int i = 0;
 
-    planes = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/planeData.txt","r");
+    planes = fopen("planeData.txt","r");
 
     printf("\n\t\t\t\tPlane No.  Source  Destination  Time  Seat Count  Hop Station codes\n");
 
@@ -1042,11 +1042,11 @@ void adminOptions(Graph g, int gpW[NCity][NCity])
 {
     ClearConsoleToColors(9,15);
     FILE *passengers; //creating a file for passenger details
-    passengers = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/passengersData.txt","r");
+    passengers = fopen("passengersData.txt","r");
     fclose(passengers);
 
     FILE *planes; //creating file for storing flight data
-    planes = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/planeData.txt","a");
+    planes = fopen("planeData.txt","a");
     fclose(planes);
 
     system("CLS");
@@ -1157,7 +1157,7 @@ int findFlights(int gArr[],int no, int tm)    //no indicates no. of total nodes,
     char ch;
     int i = 0;
 
-    planes = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/planeData.txt","r");
+    planes = fopen("planeData.txt","r");
     int check = 1;
     while(getc(planes)!=EOF)
     {
@@ -1300,7 +1300,7 @@ optionInp:
     else if(option != 1991)
     {
         FILE *passengers; //creating a file for passenger details
-        passengers = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/passengersData.txt","r");
+        passengers = fopen("passengersData.txt","r");
         fclose(passengers);
         system("CLS");
         if(option == 1 )
@@ -1477,7 +1477,7 @@ int main()
     ClearConsoleToColors(4,14);
 
     cout<<"\n\n\n\n\n\n\n\n";
-    system("type C:\\Users\\dell\\Desktop\\WelcomeCode.txt");
+    system("type WelcomeCode.txt");
     cout<<"\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t";
     system("pause");
     display_progress_bar();
