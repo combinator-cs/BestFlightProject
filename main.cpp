@@ -609,7 +609,7 @@ mobInp:
 
 
     int fltNo = flNo; //flight no. of customer
-    passengers = fopen("E:/Projects and lab/JIIT sem-3/DS project/Practice/Prac1/passengersData.txt","a");
+    passengers = fopen("passengersData.txt","a");
 
     fprintf(passengers,"\n%s %d %d %d %d %d %d %d", name,age,src,dest,time,mob,++myStNo,fltNo);
 
